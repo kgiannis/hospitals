@@ -1,0 +1,15 @@
+[project]
+name = "hospitals"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "fastapi>=0.137.1",
+    "httpx>=0.28.1",
+    "lxml>=6.1.1",
+    "pdfplumber>=0.11.10",
+    "pydantic>=2.13.4",
+    "uvicorn>=0.49.0",
+]
