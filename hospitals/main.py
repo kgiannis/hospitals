@@ -114,9 +114,3 @@ def api_health_centers(refresh: bool = Query(False)) -> dict:
 
 # Static web UI at "/". Mounted last so /api/* routes win.
 app.mount("/", StaticFiles(directory=str(WEB_DIR), html=True), name="web")
-
-
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run("hospitals.main:app", host="127.0.0.1", port=9999, reload=True)

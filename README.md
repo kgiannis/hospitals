@@ -6,13 +6,13 @@ PDF, parses it into structured JSON, and serves it via a small API + web UI.
 ## Run
 
 ```bash
-uv run python -m hospitals.main
+./run.sh
 ```
 
 Then open <http://localhost:9999>.
 
-(This serves on port 9999 with auto-reload. To pick a different port, run
-`uv run uvicorn hospitals.main:app --reload --port <PORT>` instead.)
+(`run.sh` serves on port 9999 with auto-reload. To pick a different port, run
+`uv run uvicorn hospitals.main:app --reload --port <PORT>` directly instead.)
 
 ## How it works
 
