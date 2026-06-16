@@ -85,12 +85,16 @@ def _group_cell_entries(cell: str) -> list[str]:
     return entries
 
 
-def _apply_override(window: Window, end_hhmm: str) -> Window:
-    """Return a copy of ``window`` whose end is replaced by ``end_hhmm``.
+def _apply_override(window: Window, override_times: list[str]) -> Window:
+    """Return a copy of ``window`` with hours taken from ``override_times``.
 
-    The override always shortens the same day's duty, so the result no longer
-    crosses midnight."""
-    return Window(start=window.start, end=end_hhmm, crosses_midnight=False)
+    The override's end is always the last time it states. When the override
+    states two or more times (e.g. "08:00 έως 15:00") the first time is the
+    real start; when it states only one time (e.g. "έως 21:00") the column
+    window's start is kept. The override always confines duty to a single day,
+    so the result no longer crosses midnight."""
+    start = override_times[0] if len(override_times) >= 2 else window.start
+    return Window(start=start, end=override_times[-1], crosses_midnight=False)
 
 
 def _split_cell_into_hospitals(cell: str, column_window: Window) -> list[Hospital]:
@@ -107,7 +111,7 @@ def _split_cell_into_hospitals(cell: str, column_window: Window) -> list[Hospita
             name = name[: match.start()].strip()
             override_times = _TIME_HEADER_RE.findall(note)
             if override_times:
-                window = _apply_override(column_window, override_times[-1])
+                window = _apply_override(column_window, override_times)
         if name:
             hospitals.append(Hospital(name=name, window=window, note=note))
     return hospitals
@@ -173,6 +177,8 @@ def parse_pdf(
 
     health_centers = _parse_health_centers("\n".join(full_text_parts))
     specialties = [s for s in specialties if s.hospitals]
+    if not specialties:
+        raise ValueError("No specialties parsed from PDF")
     return DaySchedule(
         date=date_str,
         date_greek=date_greek,
