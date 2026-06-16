@@ -1,6 +1,6 @@
 # Attica Hospital On-Call Tracker
 
-Scrapes the Greek Ministry of Health's daily Attica hospital on-call (εφημερία)
+Reads the Greek Ministry of Health's daily Attica hospital on-call (εφημερία)
 PDF, parses it into structured JSON, and serves it via a small API + web UI.
 
 ## Requirements
@@ -43,8 +43,9 @@ read the cached JSON. Add `?refresh=1` to any API endpoint to force a re-fetch.
 ## Daily data pipeline (Phase 2A)
 
 A scheduled GitHub Action (`.github/workflows/daily.yml`) runs
-`scripts/generate_schedule.py` twice each morning (Athens time). It scrapes the
-Ministry PDF for **today plus the next 7 days** (whatever is already published),
+`scripts/generate_schedule.py` twice each morning (Athens time). It reads and
+parses the Ministry's published PDF for **today plus the next 7 days** (whatever
+is already available),
 writes each day to `daily_schedules/attica/<YYYY-MM-DD>.json`, updates
 `daily_schedules/attica/index.json`, and commits the changes. The downloaded
 PDFs are never committed — only the parsed JSON.
