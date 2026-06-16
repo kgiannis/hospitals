@@ -52,8 +52,8 @@ PDFs are never committed — only the parsed JSON.
 These files are served for free over GitHub's raw CDN, e.g.:
 
 ```
-https://raw.githubusercontent.com/<owner>/hospitals/main/daily_schedules/attica/<YYYY-MM-DD>.json
-https://raw.githubusercontent.com/<owner>/hospitals/main/daily_schedules/attica/index.json
+https://raw.githubusercontent.com/kgiannis/hospitals/main/daily_schedules/attica/<YYYY-MM-DD>.json
+https://raw.githubusercontent.com/kgiannis/hospitals/main/daily_schedules/attica/index.json
 ```
 
 The files use the same schedule schema as the API. "Open now" is **not** stored
