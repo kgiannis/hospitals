@@ -40,26 +40,54 @@ On the first request each day it downloads today's PDF, parses it with
 `pdfplumber`, writes `data/YYYY-MM-DD.json`, and deletes the PDF. Later requests
 read the cached JSON. Add `?refresh=1` to any API endpoint to force a re-fetch.
 
-## Daily data pipeline (Phase 2A)
+## Data
 
-A scheduled GitHub Action (`.github/workflows/daily.yml`) runs
-`scripts/generate_schedule.py` twice each morning (Athens time). It reads and
-parses the Ministry's published PDF for **today plus the next 7 days** (whatever
-is already available),
-writes each day to `daily_schedules/attica/<YYYY-MM-DD>.json`, updates
-`daily_schedules/attica/index.json`, and commits the changes. The downloaded
-PDFs are never committed — only the parsed JSON.
-
-These files are served for free over GitHub's raw CDN, e.g.:
+The daily schedules are published as static JSON files (today plus any of the
+next few days already released by the Ministry):
 
 ```
 https://raw.githubusercontent.com/kgiannis/hospitals/main/daily_schedules/attica/<YYYY-MM-DD>.json
 https://raw.githubusercontent.com/kgiannis/hospitals/main/daily_schedules/attica/index.json
 ```
 
-The files use the same schedule schema as the API. "Open now" is **not** stored
-in them — a client computes it against the current Europe/Athens time. To
-regenerate locally: `uv run python scripts/generate_schedule.py`.
+A client fetches the file for the current date. Each hospital's `window` is its
+on-duty period; `note` carries any inline override (e.g. open only until 23:00).
+"Open now" is computed by the client against the current Europe/Athens time —
+the files carry only the schedule.
+
+Example payload (trimmed):
+
+```json
+{
+  "date": "2026-06-16",
+  "date_greek": "ΤΡΙΤΗ 16 ΙΟΥΝΙΟΥ 2026",
+  "specialties": [
+    {
+      "name": "Παθολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": { "start": "08:00", "end": "14:30", "crosses_midnight": false },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΠΑΜΜΑΚΑΡΙΣΤΟ»",
+          "window": { "start": "08:00", "end": "23:00", "crosses_midnight": false },
+          "note": "έως 23:00"
+        }
+      ]
+    }
+  ],
+  "health_centers": [
+    {
+      "name": "Κ.Υ. ΑΛΕΞΑΝΔΡΑΣ",
+      "window": { "start": "08:00", "end": "08:00", "crosses_midnight": true }
+    }
+  ]
+}
+```
+
+The data refreshes automatically each morning (see `.github/workflows/daily.yml`).
 
 ## API
 
