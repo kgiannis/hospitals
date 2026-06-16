@@ -13,7 +13,9 @@ data, and serves it through a small API so a user can, in seconds:
 
 1. Open the app and see which hospitals are on duty **right now**.
 2. Pick a **specialty** (searchable) and see which hospitals cover it, with their hours.
-3. See the on-call **health centers** (Κέντρα Υγείας) for the day.
+3. Tap a hospital and see **every specialty/window it is on duty for** that day
+   (a full per-hospital view).
+4. See the on-call **health centers** (Κέντρα Υγείας) for the day.
 
 Single user (the author) for v1. Personal project.
 
@@ -126,6 +128,9 @@ days' files. During development, keep the raw extracted text available for debug
 - `GET /api/specialties` — list of specialty names (dropdown source).
 - `GET /api/specialties/{name}` — hospitals for that specialty, each with `window` +
   `open_now`.
+- `GET /api/hospitals/{name}` — every specialty + `window` + `open_now` that this
+  hospital is on duty for today (per-hospital view; derived by scanning all specialties
+  in the day's parsed schedule).
 - `GET /api/health-centers` — list with `open_now`.
 - `GET /` — the web test UI.
 
@@ -133,8 +138,10 @@ days' files. During development, keep the raw extracted text available for debug
 
 One static `index.html` + vanilla JS (no build step). Shows today's date, an
 "Ανοιχτά τώρα" default list, a searchable specialty picker (`<input>` + `<datalist>`)
-that renders hospitals with their windows and highlights open-now, and a
-"Κέντρα Υγείας" toggle. Functional only — it exists to exercise the API.
+that renders hospitals with their windows and highlights open-now. Tapping a hospital
+opens its full per-hospital view (all specialties/windows it covers today, via
+`/api/hospitals/{name}`). A "Κέντρα Υγείας" toggle shows the health centers.
+Functional only — it exists to exercise the API.
 
 ## Project layout
 
