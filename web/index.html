@@ -1,1 +1,25 @@
-<!doctype html><title>ok</title><h1>backend up</h1>
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Εφημερίες Νοσοκομείων Αττικής</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Εφημερίες Αττικής</h1>
+      <p id="date"></p>
+    </header>
+
+    <section>
+      <label for="specialty">Ειδικότητα</label>
+      <input id="specialty" list="specialties" placeholder="Αναζήτηση ειδικότητας…" />
+      <datalist id="specialties"></datalist>
+      <button id="show-health-centers" type="button">Κέντρα Υγείας</button>
+    </section>
+
+    <main id="results"></main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; max-width: 720px; }
+header h1 { margin: 0 0 0.25rem; font-size: 1.3rem; }
+#date { color: #555; margin: 0 0 1rem; }
+section { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+input { flex: 1 1 220px; padding: 0.5rem; font-size: 1rem; }
+button { padding: 0.5rem 0.75rem; font-size: 1rem; cursor: pointer; }
+.group { margin-bottom: 1rem; }
+.group h2 { font-size: 1rem; margin: 0 0 0.25rem; }
+.hospital { padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 0.4rem; cursor: pointer; }
+.hospital.open { border-color: #1a7f37; background: #eaf6ec; }
+.window { color: #555; font-size: 0.9rem; }
+.note { color: #b35900; font-size: 0.85rem; }
+.badge { font-size: 0.75rem; color: #1a7f37; font-weight: 600; }
