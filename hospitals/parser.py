@@ -32,11 +32,20 @@ _ABBREV_START_RE = re.compile(r"^(?:[Α-ΩΪΫ]\.){1,}")
 # Inline / trailing per-cell duty override meaning "until HH:MM". The word for
 # "until" appears in several case/accent variants — "έως", "εως", "ΕΩΣ" — so we
 # match each letter (epsilon, omega, final/regular sigma) against its variants.
-# Captures the trailing forms "έως 23:00", "εως 16:00", "ΕΩΣ 21:00" as well as
-# the "08:00 έως 15:00" form (which still means duty ends at the later time).
+# Captures the trailing forms "έως 23:00", "εως 16:00", "ΕΩΣ 21:00" and the
+# "08:00 έως 15:00" form, plus the parenthesized variants "(έως 16:00)" and
+# "(08:00 - 15:00)". A trailing qualifier word (e.g. "ΜΟΝΟ") and/or punctuation
+# may follow the override; both are absorbed so no time text is left on the name.
+_HHMM = r"\d{1,2}:\d{2}"
 _EOS = r"[εέΕ][ωώΩ][ςσΣ]"
+# Bare "<start>? έως <end>" or parenthesized "(έως <end>)" / "(<start> - <end>)".
+_OVERRIDE_BODY = (
+    rf"(?:(?:{_HHMM}\s*)?{_EOS}\s*{_HHMM}"
+    rf"|\(\s*(?:{_EOS}\s*)?{_HHMM}(?:\s*[–\-]\s*{_HHMM})?\s*\))"
+)
+# An optional trailing all-caps qualifier word (e.g. "ΜΟΝΟ") may follow.
 _OVERRIDE_RE = re.compile(
-    rf"\s*((?:\d{{1,2}}:\d{{2}}\s*)?{_EOS}\s*\d{{1,2}}:\d{{2}}\.?)\s*$"
+    rf"\s*({_OVERRIDE_BODY}(?:\s+[Α-ΩΪΫ]+)?)\s*[.,]?\s*$"
 )
 # Health-center line, e.g. "Κ.Υ. ΑΛΕΞΑΝΔΡΑΣ: (08:00 – 08:00 επομένης)".
 _KY_RE = re.compile(
