@@ -1,0 +1,52 @@
+name: Generate daily schedules
+
+on:
+  schedule:
+    # Athens is UTC+2 (winter) / UTC+3 (summer). These two UTC times land
+    # mid-morning Athens year-round, giving a same-day retry.
+    - cron: "0 6 * * *"
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-schedules
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Generate schedules
+        id: gen
+        run: |
+          set +e
+          uv run python scripts/generate_schedule.py
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily_schedules/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update daily schedules ($(date -u +%Y-%m-%d))"
+            git push
+          fi
+
+      - name: Fail run if today's schedule is missing
+        if: steps.gen.outputs.exit_code != '0'
+        run: |
+          echo "Today's schedule was not generated (see generator log above)."
+          exit 1
