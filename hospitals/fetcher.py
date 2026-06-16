@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import re
 import tempfile
 import unicodedata
@@ -52,8 +53,12 @@ def find_today_pdf(html: str, day: datetime) -> tuple[int, str] | None:
         text = anchor.get_text(strip=True)
         normalized = _normalize(text)
         if target in normalized and ".PDF" in normalized:
-            fdl = int(_FDL_RE.search(anchor["href"]).group(1))
-            return fdl, text
+            match = _FDL_RE.search(anchor["href"])
+            if match is None:
+                continue
+            fdl = int(match.group(1))
+            clean_label = re.split(r"\.pdf", text, flags=re.IGNORECASE)[0].strip()
+            return fdl, clean_label
     return None
 
 
@@ -68,6 +73,7 @@ def download_pdf(fdl: int) -> Path:
     )
     response.raise_for_status()
     handle, name = tempfile.mkstemp(suffix=".pdf")
+    os.close(handle)
     path = Path(name)
     path.write_bytes(response.content)
     return path
