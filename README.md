@@ -1,59 +1,25 @@
 # Attica Hospital On-Call Tracker
 
-Reads the Greek Ministry of Health's daily Attica hospital on-call (εφημερία)
-PDF, parses it into structured JSON, and serves it via a small API + web UI.
-
-## Requirements
-
-- [uv](https://docs.astral.sh/uv/) (the Python package/project manager).
-  Install on macOS/Linux with: `curl -LsSf https://astral.sh/uv/install.sh | sh`
-- That's it — uv provisions the right Python (3.12) and all dependencies into a
-  project-local `.venv`. Nothing is installed into your global Python.
-
-## Install
-
-```bash
-git clone <repo-url> hospitals
-cd hospitals
-uv sync          # creates .venv and installs the locked dependencies
-```
-
-`uv sync` reads `pyproject.toml` / `uv.lock` and sets up an isolated `.venv` in
-the project directory. Re-run it any time after pulling new changes.
-
-## Run
-
-```bash
-./run.sh
-```
-
-Then open <http://localhost:9999>.
-
-`run.sh` starts the server on port 9999 with auto-reload (it just runs
-`uv run uvicorn hospitals.main:app --reload --port 9999`). To use a different
-port, run that command directly with `--port <PORT>`. `uv run` activates the
-project `.venv` automatically, so you never need to activate anything yourself.
-
-## How it works
-
-On the first request each day it downloads today's PDF, parses it with
-`pdfplumber`, writes `data/YYYY-MM-DD.json`, and deletes the PDF. Later requests
-read the cached JSON. Add `?refresh=1` to any API endpoint to force a re-fetch.
+Greek hospitals publish their daily on-call (εφημερία) schedule for the Attica
+region only as PDF/DOC files. This project reads that PDF, parses it into
+structured JSON, and publishes it daily as static files that any client (such as
+a mobile app) can read directly — no server to host.
 
 ## Data
 
-The daily schedules are published as static JSON files (today plus any of the
-next few days already released by the Ministry):
+The schedules are published as static JSON over GitHub's raw CDN — today plus
+any of the next few days the Ministry has already released:
 
 ```
 https://raw.githubusercontent.com/kgiannis/hospitals/main/daily_schedules/attica/<YYYY-MM-DD>.json
 https://raw.githubusercontent.com/kgiannis/hospitals/main/daily_schedules/attica/index.json
 ```
 
-A client fetches the file for the current date. Each hospital's `window` is its
-on-duty period; `note` carries any inline override (e.g. open only until 23:00).
-"Open now" is computed by the client against the current Europe/Athens time —
-the files carry only the schedule.
+A client fetches the file for the current date (`index.json` lists which dates
+are available). Each hospital's `window` is its on-duty period; `note` carries
+any inline override (e.g. open only until 23:00). "Open now" is computed by the
+client against the current Europe/Athens time — the files carry only the
+schedule.
 
 Example payload (trimmed):
 
@@ -87,9 +53,44 @@ Example payload (trimmed):
 }
 ```
 
-The data refreshes automatically each morning (see `.github/workflows/daily.yml`).
+The data refreshes automatically each morning via a scheduled GitHub Action
+(`.github/workflows/daily.yml`); the source PDFs are never stored, only the
+parsed JSON.
 
-## API
+## Running locally (optional)
+
+You only need this to regenerate the data yourself or to work on the parser —
+consuming the published files above requires no setup.
+
+Requirements: [uv](https://docs.astral.sh/uv/)
+(`curl -LsSf https://astral.sh/uv/install.sh | sh`). uv provisions Python 3.12
+and all dependencies into a project-local `.venv`; nothing touches your global
+Python.
+
+```bash
+git clone https://github.com/kgiannis/hospitals.git
+cd hospitals
+uv sync
+```
+
+Regenerate the schedules into `daily_schedules/attica/`:
+
+```bash
+uv run python scripts/generate_schedule.py
+```
+
+### Optional API + web UI
+
+A small FastAPI app can serve the same data over HTTP with a simple web UI —
+handy for inspecting the parser output during development:
+
+```bash
+./run.sh        # serves http://localhost:9999 with auto-reload
+```
+
+On the first request each day it reads today's PDF, caches
+`data/YYYY-MM-DD.json`, and serves these endpoints (append `?refresh=1` to force
+a re-fetch):
 
 - `GET /api/now` — hospitals on duty right now, grouped by specialty
 - `GET /api/specialties` — specialty names
