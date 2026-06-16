@@ -40,6 +40,26 @@ On the first request each day it downloads today's PDF, parses it with
 `pdfplumber`, writes `data/YYYY-MM-DD.json`, and deletes the PDF. Later requests
 read the cached JSON. Add `?refresh=1` to any API endpoint to force a re-fetch.
 
+## Daily data pipeline (Phase 2A)
+
+A scheduled GitHub Action (`.github/workflows/daily.yml`) runs
+`scripts/generate_schedule.py` twice each morning (Athens time). It scrapes the
+Ministry PDF for **today plus the next 7 days** (whatever is already published),
+writes each day to `daily_schedules/attica/<YYYY-MM-DD>.json`, updates
+`daily_schedules/attica/index.json`, and commits the changes. The downloaded
+PDFs are never committed — only the parsed JSON.
+
+These files are served for free over GitHub's raw CDN, e.g.:
+
+```
+https://raw.githubusercontent.com/<owner>/hospitals/main/daily_schedules/attica/<YYYY-MM-DD>.json
+https://raw.githubusercontent.com/<owner>/hospitals/main/daily_schedules/attica/index.json
+```
+
+The files use the same schedule schema as the API. "Open now" is **not** stored
+in them — a client computes it against the current Europe/Athens time. To
+regenerate locally: `uv run python scripts/generate_schedule.py`.
+
 ## API
 
 - `GET /api/now` — hospitals on duty right now, grouped by specialty
