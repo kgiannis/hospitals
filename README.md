@@ -3,6 +3,24 @@
 Scrapes the Greek Ministry of Health's daily Attica hospital on-call (εφημερία)
 PDF, parses it into structured JSON, and serves it via a small API + web UI.
 
+## Requirements
+
+- [uv](https://docs.astral.sh/uv/) (the Python package/project manager).
+  Install on macOS/Linux with: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+- That's it — uv provisions the right Python (3.12) and all dependencies into a
+  project-local `.venv`. Nothing is installed into your global Python.
+
+## Install
+
+```bash
+git clone <repo-url> hospitals
+cd hospitals
+uv sync          # creates .venv and installs the locked dependencies
+```
+
+`uv sync` reads `pyproject.toml` / `uv.lock` and sets up an isolated `.venv` in
+the project directory. Re-run it any time after pulling new changes.
+
 ## Run
 
 ```bash
@@ -11,8 +29,10 @@ PDF, parses it into structured JSON, and serves it via a small API + web UI.
 
 Then open <http://localhost:9999>.
 
-(`run.sh` serves on port 9999 with auto-reload. To pick a different port, run
-`uv run uvicorn hospitals.main:app --reload --port <PORT>` directly instead.)
+`run.sh` starts the server on port 9999 with auto-reload (it just runs
+`uv run uvicorn hospitals.main:app --reload --port 9999`). To use a different
+port, run that command directly with `--port <PORT>`. `uv run` activates the
+project `.venv` automatically, so you never need to activate anything yourself.
 
 ## How it works
 
