@@ -1,8 +1,8 @@
 {
   "date": "2026-07-05",
-  "date_greek": "ΚΥΡΙΑΚΗ 05 ΙΟΥΛΙΟΥ 2026",
-  "source_fdl": 31299,
-  "fetched_at": "2026-07-04T13:55:57.392705+03:00",
+  "date_greek": "ΚΥΡΙΑΚΗ 05 ΙΟΥΛΙΟΥ 2026 -ΟΡΘΗ ΕΠΑΝΑΚΟΙΝΟΠΟΙΗΣΗ",
+  "source_fdl": 31308,
+  "fetched_at": "2026-07-05T11:55:09.731242+03:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -197,24 +197,6 @@
             "crosses_midnight": true
           },
           "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
         }
       ]
     },
@@ -296,6 +278,24 @@
       "hospitals": [
         {
           "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -476,6 +476,20 @@
             "crosses_midnight": true
           },
           "note": null
+        }
+      ]
+    },
+    {
+      "name": "Ορθοπεδική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
         },
         {
           "name": "Γ.Ν.Ν.ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
@@ -487,7 +501,16 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν. «ΑΣΚΛΗΠΙΕΙΟ» ΒΟΥΛΑΣ",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -499,10 +522,10 @@
           "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
           "window": {
             "start": "08:00",
-            "end": "21:00",
-            "crosses_midnight": false
+            "end": "08:00",
+            "crosses_midnight": true
           },
-          "note": "έως 21:00"
+          "note": null
         }
       ]
     },
@@ -534,24 +557,6 @@
         },
         {
           "name": "Γ.Ν.Ν.ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -695,10 +700,10 @@
       ]
     },
     {
-      "name": "Ω.Ρ.Λ.",
+      "name": "Γυναικολογική",
       "hospitals": [
         {
-          "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
+          "name": "Γ.Ν.Α.Μ. «ΕΛ. ΒΕΝΙΖΕΛΟΥ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -710,10 +715,10 @@
           "name": "Γ.Ν.Ν.ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
           "window": {
             "start": "08:00",
-            "end": "23:00",
-            "crosses_midnight": false
+            "end": "08:00",
+            "crosses_midnight": true
           },
-          "note": "έως 23:00"
+          "note": null
         },
         {
           "name": "ΠΕΙΡΑΙΑΣ",
@@ -726,15 +731,6 @@
         },
         {
           "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν. «ΑΣΚΛΗΠΙΕΙΟ» ΒΟΥΛΑΣ",
           "window": {
             "start": "08:00",
             "end": "08:00",
