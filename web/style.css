@@ -12,3 +12,4 @@ button { padding: 0.5rem 0.75rem; font-size: 1rem; cursor: pointer; }
 .window { color: #555; font-size: 0.9rem; }
 .note { color: #b35900; font-size: 0.85rem; }
 .badge { font-size: 0.75rem; color: #1a7f37; font-weight: 600; }
+.hint { color: #777; font-size: 0.95rem; }
