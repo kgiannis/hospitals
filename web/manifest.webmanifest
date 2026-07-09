@@ -1,0 +1,22 @@
+{
+  "name": "Εφημερίες Νοσοκομείων Αττικής",
+  "short_name": "Εφημερίες",
+  "description": "Ποιο νοσοκομείο εφημερεύει στην Αττική ανά ειδικότητα.",
+  "lang": "el",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#1a7f37",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "./icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

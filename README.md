@@ -57,6 +57,30 @@ The data refreshes automatically each morning via a scheduled GitHub Action
 (`.github/workflows/daily.yml`); the source PDFs are never stored, only the
 parsed JSON.
 
+## Install on your phone (PWA)
+
+The web UI in `web/` is a Progressive Web App published to **GitHub Pages**, so
+it installs on your phone like a normal app — a home-screen icon that opens
+fullscreen, works offline, and reads the schedules directly (no server).
+
+Live URL: **https://kgiannis.github.io/hospitals/**
+
+One-time install on Android:
+
+1. Open the URL above in **Chrome** (scan the QR code to skip typing it).
+2. Tap the ⋮ menu → **Add to Home screen** / **Install app**.
+3. Launch it from the new icon — after this you never touch a browser or URL
+   again. Pick a specialty from the dropdown to see which hospital is on duty
+   and which is open right now.
+
+On iPhone the equivalent is Safari → Share → **Add to Home Screen**.
+
+Publishing is automatic: `.github/workflows/pages.yml` bundles `web/` together
+with the latest `daily_schedules/attica/` (into `data/`) and deploys on every
+push to `main` — including the twice-daily data commits, so the app stays fresh.
+**One-time setup:** in the repo **Settings → Pages**, set the source to
+**GitHub Actions**.
+
 ## Running locally (optional)
 
 You only need this to regenerate the data yourself or to work on the parser —
@@ -103,4 +127,4 @@ All endpoints are for **today**, Europe/Athens. Attica region only.
 ## Not in v1
 
 No database, no tests, no auth, no maps/phone, no other regions, no date picker,
-no mobile app (planned as a separate phase).
+no native Android/iOS app (the PWA above covers phone use).
