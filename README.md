@@ -65,9 +65,11 @@ fullscreen, works offline, and reads the schedules directly (no server).
 
 Live URL: **https://kgiannis.github.io/hospitals/**
 
+<img src="web/hospitals-qr.png" alt="QR code for https://kgiannis.github.io/hospitals/" width="200" />
+
 One-time install on Android:
 
-1. Open the URL above in **Chrome** (scan the QR code to skip typing it).
+1. Open the URL above in **Chrome** — or scan the QR code above to skip typing it.
 2. Tap the ⋮ menu → **Add to Home screen** / **Install app**.
 3. Launch it from the new icon — after this you never touch a browser or URL
    again. Pick a specialty from the dropdown to see which hospital is on duty
