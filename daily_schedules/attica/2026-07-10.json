@@ -1,8 +1,8 @@
 {
-  "date": "2026-07-06",
-  "date_greek": "ΔΕΥΤΕΡΑ 06 ΙΟΥΛΙΟΥ 2026",
-  "source_fdl": 31298,
-  "fetched_at": "2026-07-06T15:52:20.840794+03:00",
+  "date": "2026-07-10",
+  "date_greek": "ΠΑΡΑΣΚΕΥΗ 10 ΙΟΥΛΙΟΥ 2026",
+  "source_fdl": 31324,
+  "fetched_at": "2026-07-09T15:08:54.198291+03:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -995,6 +995,29 @@
       ]
     },
     {
+      "name": "Πνευμονολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
+          "window": {
+            "start": "08:00",
+            "end": "14:30",
+            "crosses_midnight": false
+          },
+          "note": "έως 14:30"
+        },
+        {
+          "name": "Γ.Ν.Α «ΣΩΤΗΡΙΑ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
       "name": "Πλαστ. Χειρουργική",
       "hospitals": [
         {
@@ -1035,25 +1058,7 @@
       "name": "Ψυχιατρική",
       "hospitals": [
         {
-          "name": "Γ.Ν.Α. «Γ. ΓΕΝΝΗΜΑΤΑΣ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «Η ΣΩΤΗΡΙΑ»",
+          "name": "ΔΡΟΜΟΚΑΙΤΕΙΟ",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -1235,16 +1240,16 @@
       "name": "Παιδιατρικό",
       "hospitals": [
         {
-          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ» ¨",
           "window": {
             "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
+            "end": "14:30",
+            "crosses_midnight": false
           },
           "note": null
         },
         {
-          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
+          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -1276,16 +1281,16 @@
       "name": "Παιδοψυχιατρική",
       "hospitals": [
         {
-          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
           "window": {
             "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
+            "end": "14:30",
+            "crosses_midnight": false
           },
           "note": null
         },
         {
-          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
+          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -1302,8 +1307,8 @@
           "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
           "window": {
             "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
+            "end": "14:30",
+            "crosses_midnight": false
           },
           "note": null
         }
