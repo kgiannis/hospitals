@@ -1,8 +1,8 @@
 {
   "date": "2026-07-11",
-  "date_greek": "ΣΑΒΒΑΤΟ 11 ΙΟΥΛΙΟΥ 2026",
-  "source_fdl": 31345,
-  "fetched_at": "2026-07-11T10:58:35.693962+03:00",
+  "date_greek": "ΣΑΒΒΑΤΟ 11 ΙΟΥΛΙΟΥ 2026 -ΟΡΘΗ ΕΠΑΝΑ;ΚΟΙΝΟΠΟΙΗΣΗ",
+  "source_fdl": 31354,
+  "fetched_at": "2026-07-11T13:17:55.867582+03:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -604,24 +604,6 @@
             "crosses_midnight": true
           },
           "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
-          "window": {
-            "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
-          },
-          "note": "έως 14:30"
         }
       ]
     },
