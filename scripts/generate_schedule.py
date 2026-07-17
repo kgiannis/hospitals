@@ -24,6 +24,27 @@ LOOKAHEAD_DAYS = 7
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "daily_schedules" / REGION
 
 
+def _prune_old(now: datetime) -> None:
+    """Delete date files older than yesterday.
+
+    The site only ever serves today's schedule (or the most recent published
+    day as a fallback), so we keep yesterday, today, and any look-ahead files
+    and drop everything older. Files whose name is not a YYYY-MM-DD date are
+    left untouched.
+    """
+    cutoff = (now - timedelta(days=1)).strftime("%Y-%m-%d")
+    for path in OUTPUT_DIR.glob("*.json"):
+        if path.name == "index.json":
+            continue
+        try:
+            datetime.strptime(path.stem, "%Y-%m-%d")
+        except ValueError:
+            continue
+        if path.stem < cutoff:
+            path.unlink()
+            print(f"[PRUNE] Removed {path.name}")
+
+
 def _write_index(now: datetime) -> None:
     """Write index.json listing every date file present in OUTPUT_DIR."""
     dates = sorted(p.stem for p in OUTPUT_DIR.glob("*.json") if p.name != "index.json")
@@ -73,6 +94,7 @@ def generate() -> int:
         if offset == 0:
             today_ok = True
 
+    _prune_old(now)
     _write_index(now)
 
     if not today_ok:
