@@ -1,0 +1,830 @@
+{
+  "date": "2026-07-19",
+  "date_greek": "ΚΥΡΙΑΚΗ 19 ΙΟΥΛΙΟΥ 2026",
+  "source_fdl": 31372,
+  "fetched_at": "2026-07-18T10:53:43.977422+03:00",
+  "specialties": [
+    {
+      "name": "Παθολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "22:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 22:00"
+        },
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Καρδιολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "22:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 22:00"
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Χειρουργική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΑΡΕΤΑΙΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Αγγειοχειρ/κή",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Αιματολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Γναθοχειρουργική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»  ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Δερματολογική",
+      "hospitals": [
+        {
+          "name": "Ν.Δ.Ν.Α. «Α. ΣΥΓΓΡΟΣ» ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Θωρακοχειρ/κή",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Νευρολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "22:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 22:00"
+        },
+        {
+          "name": "Π.Γ.Ν.Α. «ΑΙΓΗΝΙΤΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Νευροχειρουργική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Νεφρολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "18:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 18:00"
+        }
+      ]
+    },
+    {
+      "name": "Ογκολογική",
+      "hospitals": [
+        {
+          "name": "Α.Ο.Ν.Α. « ΑΓΙΟΣ ΣΑΒΒΑΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "15:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 15:00"
+        },
+        {
+          "name": "Γ.Ο.Ν.Κ. «ΑΓΙΟΙ ΑΝΑΡΓΥΡΟΙ»",
+          "window": {
+            "start": "08:00",
+            "end": "15:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 15:00"
+        }
+      ]
+    },
+    {
+      "name": "Ορθοπεδική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν. «ΑΣΚΛΗΠΙΕΙΟ» ΒΟΥΛΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "21:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 21:00"
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Κλινική Χεριού-Μικροχειρουργική Άνω Άκρου",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Ουρολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Οφθαλμολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Ν.Α. «ΟΦΘΑΛΜΙΑΤΡΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "14:30",
+            "crosses_midnight": false
+          },
+          "note": "έως 14:30"
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «Γ. ΓΕΝΝΗΜΑΤΑΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "23:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 23:00"
+        }
+      ]
+    },
+    {
+      "name": "Πνευμονολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Πλαστ. Χειρουργική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Ρευματολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Ψυχιατρική",
+      "hospitals": [
+        {
+          "name": "Ν.Π. «ΑΙΓΙΝΗΤΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ν. ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Γυναικολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α.Μ. «ΕΛ. ΒΕΝΙΖΕΛΟΥ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Μαιευτική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΑΛΕΞΑΝΔΡΑ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α.Μ. «ΕΛ. ΒΕΝΙΖΕΛΟΥ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Παιδιατρικό",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΠΕΙΡΑΙΑΣ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Παιδοψυχιατρικό",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ» (ΓΙΑ ΕΦΗΒΟΥΣ)",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    }
+  ],
+  "health_centers": [
+    {
+      "name": "Κ.Υ. ΑΛΕΞΑΝΔΡΑΣ",
+      "window": {
+        "start": "08:00",
+        "end": "08:00",
+        "crosses_midnight": true
+      }
+    },
+    {
+      "name": "Κ.Υ. ΛΑΥΡΙΟΥ",
+      "window": {
+        "start": "08:00",
+        "end": "08:00",
+        "crosses_midnight": true
+      }
+    }
+  ]
+}
