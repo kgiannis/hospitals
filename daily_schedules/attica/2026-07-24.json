@@ -1,0 +1,193 @@
+{
+  "date": "2026-07-24",
+  "date_greek": "ΠΑΡΑΣΚΕΥΗ 24 ΙΟΥΛΙΟΥ 2026",
+  "source_fdl": 31393,
+  "fetched_at": "2026-07-24T11:29:30.234135+03:00",
+  "specialties": [
+    {
+      "name": "Γυναικολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Ν.ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "14:30",
+            "crosses_midnight": false
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Π. «ΤΖΑΝΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΑΛΕΞΑΝΔΡΑ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Μαιευτική",
+      "hospitals": [
+        {
+          "name": "   ",
+          "window": {
+            "start": "14:30",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Π. «ΤΖΑΝΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Μ «ΕΛ. ΒΕΝΙΖΕΛΟΥ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΑΛΕΞΑΝΔΡΑ» ",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Παιδιατρικό",
+      "hospitals": [
+        {
+          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "14:30",
+            "crosses_midnight": false
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Π. «ΤΖΑΝΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Παιδοψυχιατρική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "14:30",
+            "crosses_midnight": false
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Π. «ΤΖΑΝΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Παιδοοδοντιατρική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "14:30",
+            "crosses_midnight": false
+          },
+          "note": null
+        }
+      ]
+    }
+  ],
+  "health_centers": [
+    {
+      "name": "Κ.Υ. ΑΛΕΞΑΝΔΡΑΣ",
+      "window": {
+        "start": "08:00",
+        "end": "08:00",
+        "crosses_midnight": true
+      }
+    },
+    {
+      "name": "Κ.Υ. ΑΜΑΡΟΥΣΙΟΥ",
+      "window": {
+        "start": "08:00",
+        "end": "22:00",
+        "crosses_midnight": false
+      }
+    },
+    {
+      "name": "Κ.Υ. ΚΑΛΛΙΘΕΑΣ",
+      "window": {
+        "start": "08:00",
+        "end": "22:00",
+        "crosses_midnight": false
+      }
+    },
+    {
+      "name": "Κ.Υ. ΛΑΥΡΙΟΥ",
+      "window": {
+        "start": "08:00",
+        "end": "08:00",
+        "crosses_midnight": true
+      }
+    }
+  ]
+}
