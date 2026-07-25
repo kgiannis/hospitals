@@ -1,8 +1,8 @@
 {
-  "date": "2026-07-23",
-  "date_greek": "ΠΕΜΠΤΗ 23 ΙΟΥΛΙΟΥ 2026",
-  "source_fdl": 31386,
-  "fetched_at": "2026-07-23T14:13:20.918108+03:00",
+  "date": "2026-07-27",
+  "date_greek": "ΔΕΥΤΕΡΑ 27 ΙΟΥΛΙΟΥ 2026",
+  "source_fdl": 31398,
+  "fetched_at": "2026-07-25T11:08:12.610303+03:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -276,15 +276,6 @@
         },
         {
           "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
-          "window": {
-            "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
           "window": {
             "start": "14:30",
             "end": "08:00",
@@ -816,7 +807,25 @@
       "name": "Ψυχιατρική",
       "hospitals": [
         {
-          "name": "«ΔΡΟΜΟΚΑΪΤΕΙΟ»",
+          "name": "Ν.Π. «ΑΙΓΙΝΗΤΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ν. ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -849,6 +858,15 @@
         },
         {
           "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "14:30",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
           "window": {
             "start": "14:30",
             "end": "08:00",
@@ -971,7 +989,7 @@
           "note": null
         },
         {
-          "name": "Γ.Ν. Π.A «ΑΓΛ. ΚΥΡΙΑΚΟΥ»",
+          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -997,6 +1015,24 @@
           "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ» (ΓΙΑ ΕΦΗΒΟΥΣ)",
           "window": {
             "start": "14:30",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
+          "window": {
+            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
