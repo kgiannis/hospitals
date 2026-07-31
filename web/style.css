@@ -3,8 +3,30 @@ body { font-family: system-ui, sans-serif; margin: 0; padding: 1rem; max-width: 
 header h1 { margin: 0 0 0.25rem; font-size: 1.3rem; }
 #date { color: #555; margin: 0 0 1rem; }
 section { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
-input { flex: 1 1 220px; padding: 0.5rem; font-size: 1rem; }
-button { padding: 0.5rem 0.75rem; font-size: 1rem; cursor: pointer; }
+input { flex: 1 1 220px; padding: 0.5rem; font-size: 1rem; min-height: 2.75rem; }
+
+/* Both buttons are outlined. Borders are #888 rather than a lighter grey so the
+   control boundary clears the 3:1 contrast WCAG asks for. min-height is a 44px
+   touch target, and matches the input so the row does not sit ragged. */
+button {
+  padding: 0.5rem 0.9rem;
+  min-height: 2.75rem;
+  font: inherit;
+  cursor: pointer;
+  color: #444;
+  background: #fff;
+  border: 1px solid #888;
+  border-radius: 6px;
+}
+button:hover { background: #f4f4f4; }
+button:active { background: #ebebeb; }
+button:focus-visible { outline: 2px solid #1a7f37; outline-offset: 2px; }
+
+/* The view toggle is the primary action, so it carries the accent;
+   Καθαρισμός stays neutral so it does not compete for attention. */
+#toggle-health-centers { color: #1a7f37; border-color: #1a7f37; font-weight: 600; }
+#toggle-health-centers:hover { background: #eaf6ec; }
+#toggle-health-centers:active { background: #d9eede; }
 .group { margin-bottom: 1rem; }
 .group h2 { font-size: 1rem; margin: 0 0 0.25rem; }
 .hospital { padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 0.4rem; }
