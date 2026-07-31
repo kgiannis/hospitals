@@ -24,6 +24,7 @@ from pathlib import Path
 import pdfplumber
 
 from hospitals.models import DaySchedule, HealthCenter, Hospital, Specialty, Window
+from hospitals.text import normalize_greek
 from hospitals.windows import parse_window_text
 
 # A hospital name begins either with a dotted abbreviation (Γ.Ν.Α., Π.Γ.Ν.Α.,
@@ -65,7 +66,12 @@ _KY_RE = re.compile(
     r"(\d{1,2}:\d{2})\s*([^)\n]*)\)?"
 )
 _TIME_HEADER_RE = re.compile(r"\d{1,2}:\d{2}")
-_HEADER_LABEL = "Κλινικές"
+# The repeated header cell is spelled inconsistently — "Κλινικές" on some pages
+# and "ΚΛΙΝΙΚΕΣ" on others, sometimes within the same PDF (fdl 31363 uses the
+# all-caps form on pages 0-2 and the mixed-case form on page 3). Compare it
+# case- and accent-folded: this row is what teaches the parser its time-window
+# columns, so missing it silently empties every row on the page.
+_HEADER_LABEL = normalize_greek("Κλινικές")
 
 
 def _starts_new_hospital(line: str) -> bool:
@@ -77,6 +83,12 @@ def _starts_new_hospital(line: str) -> bool:
     if _ABBREV_START_RE.match(stripped):
         return True
     return any(stripped.startswith(prefix) for prefix in _BARE_NAME_STARTS)
+
+
+def _is_header_label(label: str) -> bool:
+    """True if ``label`` is the repeated "Κλινικές" header cell, in any of the
+    casings/accentuations the Ministry uses."""
+    return normalize_greek(label) == _HEADER_LABEL
 
 
 def _is_area_label(line: str) -> bool:
@@ -179,7 +191,7 @@ def parse_pdf(
                     label = (row[0] or "").strip()
                     # The header row repeats on every page; use it to learn the
                     # time-window columns and never treat it as a specialty.
-                    if label == _HEADER_LABEL:
+                    if _is_header_label(label):
                         for col_index, cell in enumerate(row):
                             if cell and _TIME_HEADER_RE.search(cell):
                                 window = parse_window_text(cell)

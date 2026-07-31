@@ -5,7 +5,6 @@ from __future__ import annotations
 import os
 import re
 import tempfile
-import unicodedata
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -14,6 +13,7 @@ import httpx
 from bs4 import BeautifulSoup
 
 from hospitals.constants import ATHENS_TZ, GREEK_MONTHS, SOURCE_URL
+from hospitals.text import normalize_greek
 
 _USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
 _FDL_RE = re.compile(r"fdl=(\d+)")
@@ -21,15 +21,6 @@ _FDL_RE = re.compile(r"fdl=(\d+)")
 
 def now_athens() -> datetime:
     return datetime.now(ZoneInfo(ATHENS_TZ))
-
-
-def _strip_accents(text: str) -> str:
-    decomposed = unicodedata.normalize("NFD", text)
-    return "".join(c for c in decomposed if unicodedata.category(c) != "Mn")
-
-
-def _normalize(text: str) -> str:
-    return _strip_accents(text).upper().strip()
 
 
 def fetch_listing() -> str:
@@ -47,11 +38,11 @@ def find_today_pdf(html: str, day: datetime) -> tuple[int, str] | None:
     The PDF anchor text looks like "ΤΕΤΑΡΤΗ 17 ΙΟΥΝΙΟΥ 2026.pdf"; the DOC
     sibling has the same text without the ".pdf" suffix, so we require it.
     """
-    target = _normalize(f"{day.day} {GREEK_MONTHS[day.month]} {day.year}")
+    target = normalize_greek(f"{day.day} {GREEK_MONTHS[day.month]} {day.year}")
     soup = BeautifulSoup(html, "lxml")
     for anchor in soup.find_all("a", href=_FDL_RE):
         text = anchor.get_text(strip=True)
-        normalized = _normalize(text)
+        normalized = normalize_greek(text)
         if target in normalized and ".PDF" in normalized:
             match = _FDL_RE.search(anchor["href"])
             if match is None:
