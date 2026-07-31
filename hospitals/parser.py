@@ -11,6 +11,9 @@ lines, and an inline duty-hour override ("έως 22:00", "ΕΩΣ 21:00", "08:00 
 15:00") may sit on its own line. We therefore reassemble each cell into whole
 hospital entries by treating a line as a continuation unless it begins a new
 hospital name.
+
+Some cells also carry a bare area heading ("ΠΕΙΡΑΙΑΣ") on a line of its own.
+It is not a hospital and is discarded — see _AREA_LABELS.
 """
 
 from __future__ import annotations
@@ -26,8 +29,17 @@ from hospitals.windows import parse_window_text
 # A hospital name begins either with a dotted abbreviation (Γ.Ν.Α., Π.Γ.Ν.Α.,
 # Α.Ο.Ν.Α., Ν.Δ.Ν.Α., Γ.Ο.Ν.Κ., Ν.Α., Γ.Ν., ...) or with one of the bare
 # all-caps names that carry no abbreviation prefix.
-_BARE_NAME_STARTS = ("ΠΕΙΡΑΙΑΣ", "ΠΟΛΥΔΥΝΑΜΗ")
+_BARE_NAME_STARTS = ("ΠΟΛΥΔΥΝΑΜΗ",)
 _ABBREV_START_RE = re.compile(r"^(?:[Α-ΩΪΫ]\.){1,}")
+
+# Area labels that sit on a line of their own inside a time-window cell. They are
+# not hospitals and must never be emitted as one. Across 22 sampled PDFs
+# "ΠΕΙΡΑΙΑΣ" always occupied a whole line (238 times bare, once as "ΠΕΙΡΑΙΑΣ ,")
+# and was followed by hospitals as far from Piraeus as Γ.Ν.Ε. «ΘΡΙΑΣΙΟ», which is
+# in Elefsina — so the label cannot be attached to the entry beneath it either.
+# We drop it, while still letting it end whatever entry precedes it.
+_AREA_LABELS = frozenset({"ΠΕΙΡΑΙΑΣ"})
+_LABEL_TRAILING = " .,·:;"
 
 # Inline / trailing per-cell duty override meaning "until HH:MM". The word for
 # "until" appears in several case/accent variants — "έως", "εως", "ΕΩΣ" — so we
@@ -67,21 +79,34 @@ def _starts_new_hospital(line: str) -> bool:
     return any(stripped.startswith(prefix) for prefix in _BARE_NAME_STARTS)
 
 
+def _is_area_label(line: str) -> bool:
+    """True if ``line`` is a bare area heading such as "ΠΕΙΡΑΙΑΣ" rather than a
+    hospital name. Trailing punctuation is tolerated ("ΠΕΙΡΑΙΑΣ ,")."""
+    return line.strip(_LABEL_TRAILING) in _AREA_LABELS
+
+
 def _group_cell_entries(cell: str) -> list[str]:
     """Group the newline-split lines of a cell into one string per hospital.
 
     The first line always opens an entry; subsequent lines that do not look
     like a new hospital name are appended to the current entry (they are
-    wrapped name fragments or override lines such as "έως 23:00")."""
+    wrapped name fragments or override lines such as "έως 23:00"). Area labels
+    are dropped, but still act as a boundary so the name under a label opens its
+    own entry instead of being glued to the entry above the label."""
     entries: list[str] = []
+    after_label = False
     for raw in cell.split("\n"):
         line = raw.strip()
         if not line:
             continue
-        if entries and not _starts_new_hospital(line):
+        if _is_area_label(line):
+            after_label = True
+            continue
+        if entries and not after_label and not _starts_new_hospital(line):
             entries[-1] = f"{entries[-1]} {line}"
         else:
             entries.append(line)
+        after_label = False
     return entries
 
 

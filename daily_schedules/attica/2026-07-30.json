@@ -89,15 +89,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -187,15 +178,6 @@
           "name": "Γ.Ν.Α. «ΙΠΠΟΚΡΑΤΕΙΟ»",
           "window": {
             "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
@@ -306,15 +288,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -397,15 +370,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -433,15 +397,6 @@
     {
       "name": "Δερματολογική",
       "hospitals": [
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
         {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
@@ -502,15 +457,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -528,15 +474,6 @@
           "name": "Γ.Ν.Α. «ΚΟΡΓ. ΜΠΕΝ. ΕΕΣ»",
           "window": {
             "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
@@ -607,15 +544,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -651,15 +579,6 @@
           "name": "Γ.Ν.Α. «ΚΟΡΓ. ΜΠΕΝ. ΕΕΣ»",
           "window": {
             "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
@@ -730,15 +649,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -783,15 +693,6 @@
           "name": "Γ.Ν.Α. «ΚΟΡΓ. ΜΠΕΝ. ΕΕΣ»",
           "window": {
             "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
@@ -889,15 +790,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -969,15 +861,6 @@
           "name": "Γ.Ν.Α. «ΙΠΠΟΚΡΑΤΕΙΟ»",
           "window": {
             "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
@@ -1144,15 +1027,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -1185,15 +1059,6 @@
           "note": null
         },
         {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
           "name": "Γ.Ν.Ν. «ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ»",
           "window": {
             "start": "08:00",
@@ -1213,15 +1078,6 @@
             "start": "08:00",
             "end": "14:30",
             "crosses_midnight": false
-          },
-          "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
           },
           "note": null
         },
@@ -1268,15 +1124,6 @@
         },
         {
           "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "ΠΕΙΡΑΙΑΣ ,",
           "window": {
             "start": "08:00",
             "end": "08:00",
