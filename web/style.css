@@ -7,7 +7,7 @@ input { flex: 1 1 220px; padding: 0.5rem; font-size: 1rem; }
 button { padding: 0.5rem 0.75rem; font-size: 1rem; cursor: pointer; }
 .group { margin-bottom: 1rem; }
 .group h2 { font-size: 1rem; margin: 0 0 0.25rem; }
-.hospital { padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 0.4rem; cursor: pointer; }
+.hospital { padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 0.4rem; }
 .hospital.open { border-color: #1a7f37; background: #eaf6ec; }
 .window { color: #555; font-size: 0.9rem; }
 .note { color: #b35900; font-size: 0.85rem; }

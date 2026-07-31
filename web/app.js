@@ -5,8 +5,12 @@
 const results = document.getElementById("results");
 const input = document.getElementById("specialty");
 const datalist = document.getElementById("specialties");
+const clearBtn = document.getElementById("clear");
 
 const DATA_BASE = "./data";
+
+const HINT_HTML =
+  '<p class="hint">Διάλεξε ειδικότητα για να δεις ποιο νοσοκομείο εφημερεύει.</p>';
 
 // The one day's schedule currently loaded into memory.
 let schedule = null;
@@ -124,11 +128,18 @@ async function load() {
     datalist.appendChild(opt);
   }
 
-  results.innerHTML =
-    '<p class="hint">Διάλεξε ειδικότητα για να δεις ποιο νοσοκομείο εφημερεύει.</p>';
+  showHint();
 }
 
 // --- views ---
+
+// The empty state. Both the initial render and "Καθαρισμός" go through here so
+// the two cannot drift apart.
+function showHint() {
+  input.value = "";
+  results.innerHTML = HINT_HTML;
+  clearBtn.hidden = true;
+}
 
 function showSpecialty(name) {
   if (!schedule) return;
@@ -136,17 +147,36 @@ function showSpecialty(name) {
   if (!spec) return;
   results.innerHTML = `<h2>${spec.name}</h2>`;
   for (const h of withOpenNow(spec.hospitals)) results.appendChild(hospitalCard(h));
+  clearBtn.hidden = false;
 }
 
 function showHealthCenters() {
   if (!schedule) return;
+  // Clear the box so it never contradicts the panel below it.
+  input.value = "";
   results.innerHTML = `<h2>Κέντρα Υγείας</h2>`;
   for (const c of withOpenNow(schedule.health_centers)) results.appendChild(hospitalCard(c));
+  clearBtn.hidden = false;
 }
 
-input.addEventListener("change", () => {
-  if (input.value) showSpecialty(input.value);
-});
+// Bound to both events: "change" covers datalist selection and blur, "input"
+// catches the keystroke that empties the field. A partial or misspelled value
+// falls through to showSpecialty's no-match guard, leaving the panel as-is.
+function onSpecialtyChanged() {
+  if (!input.value) {
+    showHint();
+    return;
+  }
+  showSpecialty(input.value);
+}
+
+input.addEventListener("input", onSpecialtyChanged);
+input.addEventListener("change", onSpecialtyChanged);
 document.getElementById("show-health-centers").addEventListener("click", showHealthCenters);
+clearBtn.addEventListener("click", () => {
+  showHint();
+  // The button hides itself on click, so move focus somewhere useful.
+  input.focus();
+});
 
 load();
