@@ -6,14 +6,25 @@ const results = document.getElementById("results");
 const input = document.getElementById("specialty");
 const datalist = document.getElementById("specialties");
 const clearBtn = document.getElementById("clear");
+const toggleBtn = document.getElementById("toggle-health-centers");
 
 const DATA_BASE = "./data";
 
 const HINT_HTML =
   '<p class="hint">Διάλεξε ειδικότητα για να δεις ποιο νοσοκομείο εφημερεύει.</p>';
 
+// toggleBtn swaps between these two, so its label always names where it goes.
+const HEALTH_LABEL = "Κέντρα Υγείας";
+const HOSPITALS_LABEL = "Νοσοκομεία";
+
 // The one day's schedule currently loaded into memory.
 let schedule = null;
+
+// Which panel is on screen, and the specialty to return to when leaving the
+// health-centre view. The search box is emptied while health centres show (so
+// it cannot contradict the panel), so the name has to be remembered here.
+let view = "hint"; // "hint" | "specialty" | "health"
+let lastSpecialty = null;
 
 // --- time helpers (always Europe/Athens, regardless of device timezone) ---
 
@@ -133,30 +144,52 @@ async function load() {
 
 // --- views ---
 
+// Each view function owns the whole toolbar state — panel, search box, and both
+// button labels — so no combination of clicks can leave them inconsistent.
+
 // The empty state. Both the initial render and "Καθαρισμός" go through here so
 // the two cannot drift apart.
 function showHint() {
+  view = "hint";
+  lastSpecialty = null;
   input.value = "";
   results.innerHTML = HINT_HTML;
   clearBtn.hidden = true;
+  toggleBtn.textContent = HEALTH_LABEL;
 }
 
 function showSpecialty(name) {
   if (!schedule) return;
   const spec = schedule.specialties.find((s) => s.name === name);
   if (!spec) return;
+  view = "specialty";
+  lastSpecialty = spec.name;
   results.innerHTML = `<h2>${spec.name}</h2>`;
   for (const h of withOpenNow(spec.hospitals)) results.appendChild(hospitalCard(h));
   clearBtn.hidden = false;
+  toggleBtn.textContent = HEALTH_LABEL;
 }
 
 function showHealthCenters() {
   if (!schedule) return;
-  // Clear the box so it never contradicts the panel below it.
+  view = "health";
+  // Clear the box so it never contradicts the panel; lastSpecialty remembers it.
   input.value = "";
-  results.innerHTML = `<h2>Κέντρα Υγείας</h2>`;
+  results.innerHTML = `<h2>${HEALTH_LABEL}</h2>`;
   for (const c of withOpenNow(schedule.health_centers)) results.appendChild(hospitalCard(c));
   clearBtn.hidden = false;
+  toggleBtn.textContent = HOSPITALS_LABEL;
+}
+
+// Back out of the health-centre view: to the specialty that was showing before
+// it, or to the hint if health centres were opened straight from the hint.
+function showHospitals() {
+  if (lastSpecialty) {
+    input.value = lastSpecialty;
+    showSpecialty(lastSpecialty);
+    return;
+  }
+  showHint();
 }
 
 // Bound to both events: "change" covers datalist selection and blur, "input"
@@ -172,7 +205,10 @@ function onSpecialtyChanged() {
 
 input.addEventListener("input", onSpecialtyChanged);
 input.addEventListener("change", onSpecialtyChanged);
-document.getElementById("show-health-centers").addEventListener("click", showHealthCenters);
+toggleBtn.addEventListener("click", () => {
+  if (view === "health") showHospitals();
+  else showHealthCenters();
+});
 clearBtn.addEventListener("click", () => {
   showHint();
   // The button hides itself on click, so move focus somewhere useful.
