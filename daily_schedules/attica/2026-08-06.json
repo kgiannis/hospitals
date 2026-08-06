@@ -1,8 +1,8 @@
 {
   "date": "2026-08-06",
-  "date_greek": "ΠΕΜΠΤΗ 06 ΑΥΓΟΥΣΤΟΥ 2026",
-  "source_fdl": 31495,
-  "fetched_at": "2026-08-05T14:23:27.642847+03:00",
+  "date_greek": "ΠΕΜΠΤΗ 06 ΑΥΓΟΥΣΤΟΥ 2026 ΟΡΘΗ ΕΠΑΝΑΚΟΙΝΟΠΟΙΗΣΗ",
+  "source_fdl": 31507,
+  "fetched_at": "2026-08-06T11:37:47.855132+03:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -281,8 +281,26 @@
       ]
     },
     {
-      "name": "Αιματολογική",
+      "name": "Αγγειοχειρ/κή",
       "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
+          "window": {
+            "start": "08:00",
+            "end": "14:30",
+            "crosses_midnight": false
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "14:30",
+            "crosses_midnight": false
+          },
+          "note": null
+        },
         {
           "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
           "window": {
@@ -302,9 +320,18 @@
           "note": null
         },
         {
-          "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
+          "name": "Γ.Ν.Ν.ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
           "window": {
             "start": "14:30",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
+          "window": {
+            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
@@ -606,10 +633,10 @@
       ]
     },
     {
-      "name": "Ορθοπαιδική",
+      "name": "Οδοντιατρική",
       "hospitals": [
         {
-          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
           "window": {
             "start": "08:00",
             "end": "14:30",
@@ -618,20 +645,11 @@
           "note": null
         },
         {
-          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
           "window": {
-            "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ο.Ν.Κ. «ΑΓ. ΑΝΑΡΓΥΡΟΙ»",
-          "window": {
-            "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
+            "start": "14:30",
+            "end": "08:00",
+            "crosses_midnight": true
           },
           "note": null
         },
@@ -639,46 +657,19 @@
           "name": "Γ.Ν.Ν.ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
           "window": {
             "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
+            "end": "23:00",
+            "crosses_midnight": false
           },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ» 14:30 – 08:00 επομένης",
-          "window": {
-            "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
+          "note": "έως 23:00"
         },
         {
           "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
           "window": {
             "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
+            "end": "21:00",
+            "crosses_midnight": false
           },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν. «ΑΣΚΛΗΠΙΕΙΟ» ΒΟΥΛΑΣ",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «ΚΑΤ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
+          "note": "έως 21:00"
         }
       ]
     },
