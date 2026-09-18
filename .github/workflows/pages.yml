@@ -6,7 +6,11 @@ on:
   # Called by daily.yml once it has pushed new schedules. Its own push cannot
   # trigger the `push` event above: GitHub suppresses workflow triggers for
   # events created with the default GITHUB_TOKEN, to prevent workflow loops.
-  workflow_call: {}
+  workflow_call:
+    outputs:
+      page_url:
+        description: "Base URL of the deployment this run published."
+        value: ${{ jobs.deploy.outputs.page_url }}
   workflow_dispatch: {}
 
 # Allow the workflow to publish to Pages via OIDC. A called workflow inherits
@@ -28,6 +32,10 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
+    # Surfaced to callers so the post-deploy check can probe the real site
+    # instead of a hardcoded URL that would rot if the repo were renamed.
+    outputs:
+      page_url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
