@@ -8,8 +8,13 @@ on:
     - cron: "0 9 * * *"
   workflow_dispatch: {}
 
+# `contents: write` for the schedule commit; the Pages permissions are for the
+# deploy job, which calls pages.yml. A called workflow inherits the caller's
+# permissions and cannot elevate them, so they must be granted here.
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: daily-schedules
@@ -18,6 +23,10 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      exit_code: ${{ steps.gen.outputs.exit_code }}
     steps:
       - uses: actions/checkout@v4
 
@@ -45,8 +54,20 @@ jobs:
             git push
           fi
 
-      - name: Fail run if today's schedule is missing
-        if: steps.gen.outputs.exit_code != '0'
-        run: |
-          echo "Today's schedule was not generated (see generator log above)."
+  # The push above is made with the default GITHUB_TOKEN, and GitHub does not
+  # fire workflow triggers for such events. Without this call, pages.yml never
+  # runs and the published site silently freezes at the last human push.
+  deploy:
+    needs: generate
+    uses: ./.github/workflows/pages.yml
+
+  # Kept separate from `generate` so a partial run — some dates written, today's
+  # missing — still deploys what it managed to produce before turning the run red.
+  report:
+    needs: [generate, deploy]
+    if: always() && needs.generate.outputs.exit_code != '0'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Today's schedule was not generated (see the generate job log)."
           exit 1

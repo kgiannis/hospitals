@@ -3,32 +3,47 @@ name: Deploy PWA to GitHub Pages
 on:
   push:
     branches: [main]
+  # Called by daily.yml once it has pushed new schedules. Its own push cannot
+  # trigger the `push` event above: GitHub suppresses workflow triggers for
+  # events created with the default GITHUB_TOKEN, to prevent workflow loops.
+  workflow_call: {}
   workflow_dispatch: {}
 
-# Allow the workflow to publish to Pages via OIDC.
+# Allow the workflow to publish to Pages via OIDC. A called workflow inherits
+# the caller's permissions and cannot elevate them, so daily.yml must grant
+# these too.
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# One deploy at a time; don't cancel an in-flight publish.
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # One deploy at a time; don't cancel an in-flight publish. Declared per-job
+    # so it applies identically whether this workflow is triggered or called.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Check out the branch tip, not the triggering SHA. When daily.yml is
+          # started by `schedule`, github.sha is main's head at trigger time —
+          # the commit *before* the generator pushed. A default checkout would
+          # deploy that pre-push tree and publish stale data.
+          ref: main
 
       - name: Assemble site
         # The app fetches ./data/*.json same-origin, so bundle the published
-        # schedules into the web/ directory that becomes the site root.
+        # schedules into the web/ directory that becomes the site root. Start
+        # from an empty data dir so the site serves exactly what the generator
+        # produced, never a leftover from a previous date.
         run: |
+          rm -rf web/data
           mkdir -p web/data
           cp daily_schedules/attica/*.json web/data/
 
