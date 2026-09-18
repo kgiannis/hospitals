@@ -63,11 +63,32 @@ jobs:
 
   # Kept separate from `generate` so a partial run — some dates written, today's
   # missing — still deploys what it managed to produce before turning the run red.
+  #
+  # Runs on every outcome, because it now carries the post-deploy check as well:
+  # a green run must mean "today's data was generated AND it is actually live".
   report:
     needs: [generate, deploy]
-    if: always() && needs.generate.outputs.exit_code != '0'
+    if: always() && !cancelled()
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - run: |
-          echo "Today's schedule was not generated (see the generate job log)."
+      - uses: actions/checkout@v4
+        with:
+          # Same reason as pages.yml: on a `schedule` run github.sha predates the
+          # generator's push, so the index read below has to come from the tip.
+          ref: main
+
+      - name: Verify the published site caught up
+        # Only meaningful when something was actually published. `deploy` reports
+        # success as soon as Pages accepts the deployment, which is exactly the
+        # gap this step closes.
+        if: needs.deploy.result == 'success'
+        run: ./scripts/check_published.sh "${{ needs.deploy.outputs.page_url }}"
+
+      - name: Fail if today's schedule was not generated
+        # `always()` so a stale-site failure above does not mask this signal.
+        if: always() && needs.generate.outputs.exit_code != '0'
+        run: |
+          echo "::error::Today's schedule was not generated (see the generate job log)."
           exit 1
