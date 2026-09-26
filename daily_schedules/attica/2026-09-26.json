@@ -1,8 +1,8 @@
 {
   "date": "2026-09-26",
-  "date_greek": "ΣΑΒΒΑΤΟ 26 ΣΕΠΤΕΜΒΡΙΟΥ 2026",
-  "source_fdl": 31757,
-  "fetched_at": "2026-09-25T17:29:25.618741+03:00",
+  "date_greek": "ΣΑΒΒΑΤΟ 26 ΣΕΠΤΕΜΒΡΙΟΥ 2026 ΟΡΘΗ ΕΠΑΝΑΚΟΙΝΟΠΟΙΗΣΗ",
+  "source_fdl": 31762,
+  "fetched_at": "2026-09-26T13:58:40.852575+03:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -40,15 +40,6 @@
             "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "   ",
-          "window": {
-            "start": "08:00",
-            "end": "23:00",
-            "crosses_midnight": false
           },
           "note": null
         }
@@ -92,15 +83,6 @@
             "crosses_midnight": true
           },
           "note": null
-        },
-        {
-          "name": "   ",
-          "window": {
-            "start": "08:00",
-            "end": "23:00",
-            "crosses_midnight": false
-          },
-          "note": null
         }
       ]
     },
@@ -131,15 +113,6 @@
             "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "  ",
-          "window": {
-            "start": "08:00",
-            "end": "23:00",
-            "crosses_midnight": false
           },
           "note": null
         }
@@ -619,6 +592,15 @@
             "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "ΜΟΝΟ ΓΙΑ ΕΞΩΤΕΡΙΚΑ ΙΑΤΡΕΙΑ ΤΖΑΝΕΙΟ",
+          "window": {
+            "start": "08:00",
+            "end": "23:00",
+            "crosses_midnight": false
           },
           "note": null
         }
