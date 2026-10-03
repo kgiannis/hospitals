@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-01",
-  "date_greek": "ΠΕΜΠΤΗ 01 ΟΚΤΩΒΡΙΟΥ 2026",
-  "source_fdl": 31802,
-  "fetched_at": "2026-10-01T19:09:15.441584+03:00",
+  "date": "2026-10-05",
+  "date_greek": "ΔΕΥΤΕΡΑ 05 ΟΚΤΩΒΡΙΟΥ 2026",
+  "source_fdl": 31862,
+  "fetched_at": "2026-10-03T14:15:01.374697+03:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -336,6 +336,15 @@
             "crosses_midnight": true
           },
           "note": null
+        },
+        {
+          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
         }
       ]
     },
@@ -350,15 +359,6 @@
             "crosses_midnight": true
           },
           "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
-            "end": "21:00",
-            "crosses_midnight": false
-          },
-          "note": "έως 21:00"
         }
       ]
     },
@@ -424,15 +424,6 @@
           "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
           "window": {
             "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
@@ -772,6 +763,15 @@
           "note": null
         },
         {
+          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
           "name": "Γ.Ν. «ΑΣΚΛΗΠΙΕΙΟ» ΒΟΥΛΑΣ",
           "window": {
             "start": "08:00",
@@ -888,6 +888,15 @@
             "crosses_midnight": true
           },
           "note": null
+        },
+        {
+          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
+          "window": {
+            "start": "08:00",
+            "end": "21:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 21:00"
         }
       ]
     },
@@ -959,7 +968,25 @@
       "name": "Ψυχιατρική",
       "hospitals": [
         {
-          "name": "«ΔΡΟΜΟΚΑΪΤΕΙΟ»",
+          "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Π.Γ.Ν. ΑΤΤΙΚΟΝ",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -1082,7 +1109,7 @@
           "note": null
         },
         {
-          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "name": "Γ.Ν. Π.A «ΑΓΛ. ΚΥΡΙΑΚΟΥ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -1114,7 +1141,16 @@
       "name": "Παιδοψυχιατρική",
       "hospitals": [
         {
-          "name": "Γ.Ν.Π. «ΑΓ. ΣΟΦΙΑ»",
+          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ» (ΓΙΑ ΕΦΗΒΟΥΣ)",
+          "window": {
+            "start": "14:30",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν. Π.A «ΑΓΛ. ΚΥΡΙΑΚΟΥ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
