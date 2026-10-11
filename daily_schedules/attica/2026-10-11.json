@@ -2,7 +2,7 @@
   "date": "2026-10-11",
   "date_greek": "ΚΥΡΙΑΚΗ 11 ΟΚΤΩΒΡΙΟΥ 2026",
   "source_fdl": 31903,
-  "fetched_at": "2026-10-11T18:26:42.551731+03:00",
+  "fetched_at": "2026-10-11T20:12:48.103747+03:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -228,10 +228,24 @@
       ]
     },
     {
+      "name": "Γαστρεντερολογική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
       "name": "Γναθοχειρουργική",
       "hospitals": [
         {
-          "name": "Γ.Ν.Α. «ΚΑΤ»  ",
+          "name": "Γ.Ν.Α. «ΚΑΤ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -245,7 +259,7 @@
       "name": "Δερματολογική",
       "hospitals": [
         {
-          "name": "Ν.Δ.Ν.Α. «Α. ΣΥΓΓΡΟΣ» ",
+          "name": "Ν.Δ.Ν.Α. «Α. ΣΥΓΓΡΟΣ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -367,6 +381,20 @@
             "crosses_midnight": false
           },
           "note": "έως 15:00"
+        }
+      ]
+    },
+    {
+      "name": "Οδοντιατρική",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
         }
       ]
     },
@@ -599,6 +627,29 @@
       "hospitals": [
         {
           "name": "«ΔΡΟΜΟΚΑΪΤΕΙΟ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "name": "Ω.Ρ.Λ.",
+      "hospitals": [
+        {
+          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν.Ε. «ΘΡΙΑΣΙΟ»",
           "window": {
             "start": "08:00",
             "end": "08:00",

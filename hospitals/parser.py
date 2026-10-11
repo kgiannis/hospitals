@@ -4,6 +4,8 @@ pdfplumber's line-based ``extract_tables()`` yields a clean 7-column grid for
 these PDFs: column 0 is the specialty (Κλινικές), columns 1-5 are time-window
 columns whose headers carry the hours, and the final ΠΑΡΑΤΗΡΗΣΕΙΣ column holds
 free-text notes. The header row repeats on every page and must be skipped.
+The last row on a page is often left without a bottom border; _table_settings
+closes it, or the line strategy drops that row without a trace.
 
 Within a time-window cell, several hospitals are stacked and pdfplumber joins
 them with newlines. A single hospital's name can itself wrap across several
@@ -41,6 +43,7 @@ _ABBREV_START_RE = re.compile(r"^(?:[Α-ΩΪΫ]\.){1,}")
 # We drop it, while still letting it end whatever entry precedes it.
 _AREA_LABELS = frozenset({"ΠΕΙΡΑΙΑΣ"})
 _LABEL_TRAILING = " .,·:;"
+_SYMBOL_FONT_SPACE = ""
 
 # Inline / trailing per-cell duty override meaning "until HH:MM". The word for
 # "until" appears in several case/accent variants — "έως", "εως", "ΕΩΣ" — so we
@@ -138,6 +141,9 @@ def _split_cell_into_hospitals(cell: str, column_window: Window) -> list[Hospita
     """Turn one time-window cell into Hospital entries, applying any inline
     duty-hour override to the window and recording it as the note."""
     hospitals: list[Hospital] = []
+    # U+F020 is a symbol-font space some cells are padded with (fdl 31902, Ω.Ρ.Λ.);
+    # left in, a cell holding only that glyph would become a nameless "hospital".
+    cell = cell.replace(_SYMBOL_FONT_SPACE, " ")
     for entry in _group_cell_entries(cell):
         name = re.sub(r"\s+", " ", entry).strip()
         note: str | None = None
@@ -166,6 +172,25 @@ def _parse_health_centers(text: str) -> list[HealthCenter]:
     return centers
 
 
+def _table_settings(page) -> dict:
+    """Close a table row that the page break left open at the bottom.
+
+    When a row is the last on its page, the Ministry draws its vertical borders
+    down to the page's edge but no bottom border (fdl 31903 page 0:
+    Γαστρεντερολογική, verticals end at y=799, last horizontal at y=726). The
+    line strategy only builds cells ruled on all four sides, so that row
+    silently vanished. Adding a horizontal line where the verticals end closes
+    it; when the row is already closed there, the extra line coincides with the
+    existing border and changes nothing.
+    """
+    vertical_bottoms = [
+        edge["bottom"] for edge in page.edges if edge["orientation"] == "v"
+    ]
+    if not vertical_bottoms:
+        return {}
+    return {"explicit_horizontal_lines": [max(vertical_bottoms)]}
+
+
 def parse_pdf(
     pdf_path: Path,
     *,
@@ -182,7 +207,7 @@ def parse_pdf(
     with pdfplumber.open(pdf_path) as pdf:
         for page in pdf.pages:
             full_text_parts.append(page.extract_text() or "")
-            for table in page.extract_tables():
+            for table in page.extract_tables(_table_settings(page)):
                 if not table:
                     continue
                 for row in table:
