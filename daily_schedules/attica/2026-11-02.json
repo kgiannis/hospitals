@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-21",
-  "date_greek": "ΤΕΤΑΡΤΗ 21 ΟΚΤΩΒΡΙΟΥ 2026",
-  "source_fdl": 31962,
-  "fetched_at": "2026-10-21T17:23:42.743872+03:00",
+  "date": "2026-11-02",
+  "date_greek": "ΔΕΥΤΕΡΑ 02 ΝΟΕΜΒΡΙΟΥ 2026 ΟΡΘΗ ΕΠΑΝΑΚΟΙΝΟΠΟΙΗΣΗ",
+  "source_fdl": 32017,
+  "fetched_at": "2026-11-02T16:58:53.677935+02:00",
   "specialties": [
     {
       "name": "Παθολογική",
@@ -308,65 +308,6 @@
       ]
     },
     {
-      "name": "Αγγειοχειρ/κή",
-      "hospitals": [
-        {
-          "name": "Γ.Ν.Α. «ΚΑΤ»",
-          "window": {
-            "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «ΕΛΠΙΣ»",
-          "window": {
-            "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «ΛΑΪΚΟ»",
-          "window": {
-            "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
-          "window": {
-            "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Ν.ΙΩΝΙΑΣ «ΚΩΝ/ΠΟΥΛΕΙΟ»",
-          "window": {
-            "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        }
-      ]
-    },
-    {
       "name": "Αιματολογική",
       "hospitals": [
         {
@@ -395,15 +336,6 @@
             "crosses_midnight": true
           },
           "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
         }
       ]
     },
@@ -418,6 +350,15 @@
             "crosses_midnight": true
           },
           "note": null
+        },
+        {
+          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
+          "window": {
+            "start": "08:00",
+            "end": "21:00",
+            "crosses_midnight": false
+          },
+          "note": "έως 21:00"
         }
       ]
     },
@@ -742,20 +683,6 @@
       ]
     },
     {
-      "name": "Ορθοπαιδική",
-      "hospitals": [
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        }
-      ]
-    },
-    {
       "name": "Κλινική Χεριού- Μικροχειρουργική Άνω Άκρου",
       "hospitals": [
         {
@@ -812,15 +739,6 @@
           "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
           "window": {
             "start": "14:30",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
             "end": "08:00",
             "crosses_midnight": true
           },
@@ -943,15 +861,6 @@
             "crosses_midnight": true
           },
           "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
-          "window": {
-            "start": "08:00",
-            "end": "21:00",
-            "crosses_midnight": false
-          },
-          "note": "έως 21:00"
         }
       ]
     },
@@ -1023,25 +932,7 @@
       "name": "Ψυχιατρική",
       "hospitals": [
         {
-          "name": "Γ.Ν.Α. «ΕΥΑΓΓΕΛΙΣΜΟΣ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ»",
-          "window": {
-            "start": "08:00",
-            "end": "08:00",
-            "crosses_midnight": true
-          },
-          "note": null
-        },
-        {
-          "name": "Π.Γ.Ν. ΑΤΤΙΚΟΝ",
+          "name": "«ΔΡΟΜΟΚΑΪΤΕΙΟ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -1214,15 +1105,6 @@
       "name": "Παιδιατρικό",
       "hospitals": [
         {
-          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
-          "window": {
-            "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
-          },
-          "note": null
-        },
-        {
           "name": "Π.Γ.Ν. «ΑΤΤΙΚΟΝ»",
           "window": {
             "start": "08:00",
@@ -1233,6 +1115,15 @@
         },
         {
           "name": "Γ.Ν. Π.A «ΑΓΛ. ΚΥΡΙΑΚΟΥ»",
+          "window": {
+            "start": "08:00",
+            "end": "08:00",
+            "crosses_midnight": true
+          },
+          "note": null
+        },
+        {
+          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -1255,25 +1146,16 @@
       "name": "Παιδοψυχιατρική",
       "hospitals": [
         {
-          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
+          "name": "Γ.Ν. Π.A «ΑΓΛ. ΚΥΡΙΑΚΟΥ»",
           "window": {
             "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
-          },
-          "note": null
-        },
-        {
-          "name": "Γ.Ν.Α. «ΣΙΣΜΑΝΟΓΛΕΙΟ» (ΓΙΑ ΕΦΗΒΟΥΣ)",
-          "window": {
-            "start": "14:30",
             "end": "08:00",
             "crosses_midnight": true
           },
           "note": null
         },
         {
-          "name": "Γ.Ν. Π.A «ΑΓΛ. ΚΥΡΙΑΚΟΥ»",
+          "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
           "window": {
             "start": "08:00",
             "end": "08:00",
@@ -1290,8 +1172,8 @@
           "name": "Γ.Ν. ΠΑΙΔΩΝ «ΠΕΝΤΕΛΗΣ»",
           "window": {
             "start": "08:00",
-            "end": "14:30",
-            "crosses_midnight": false
+            "end": "08:00",
+            "crosses_midnight": true
           },
           "note": null
         }
